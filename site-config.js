@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: 'Hannes Rabo Portfolio',
+  siteTitle: `Hannes Rabo Portfolio`,
   siteTitleShort: 'hrabo - portfolio',
   siteDescription: 'A short introduction to me.',
   siteUrl: 'https://hannesrabo.github.io',

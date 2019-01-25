@@ -17,14 +17,14 @@ const BoxContainer = styled.div`
   }
 `;
 
-const Index = ({ data }) => (
+const Resume = ({ data }) => (
   <Layout>
-    <Head pageTitle={data.homeJson.title} />
+    <Head pageTitle={data.resumeJson.title} />
     <BoxContainer>
       <HighlightBox>
         <div
           dangerouslySetInnerHTML={{
-            __html: data.homeJson.content.childMarkdownRemark.html,
+            __html: data.resumeJson.content.childMarkdownRemark.html,
           }}
         />
       </HighlightBox>
@@ -32,15 +32,15 @@ const Index = ({ data }) => (
   </Layout>
 );
 
-Index.propTypes = {
+Resume.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Index;
+export default Resume;
 
 export const query = graphql`
-  query HomeQuery {
-    homeJson {
+  query ResumeQuery {
+    resumeJson {
       title
       content {
         childMarkdownRemark {
