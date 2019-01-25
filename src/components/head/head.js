@@ -12,7 +12,7 @@ const Head = ({
   pageTitle,
   pageTitleFull = pageTitle ? `${siteTitle}: ${pageTitle}` : siteTitle,
   themeColor,
-  social,
+  // social,
   imageUrl,
   location,
   canonical = siteUrl + (location.pathname || ''),
@@ -45,13 +45,13 @@ const Head = ({
 
     <meta content="website" property="og:type" />
     <meta content={siteTitle} property="og:site_name" />
-    <meta content={social.fbAppId} property="fb:app_id" />
-    <meta content="summary_large_image" name="twitter:card" />
+    {/* <meta content={social.fbAppId} property="fb:app_id" /> */}
+    {/* <meta content="summary_large_image" name="twitter:card" />
     <meta content={`@${social.twitter}`} name="twitter:site" />
     <meta content={`@${social.twitter}`} name="twitter:creator" />
-    <meta content={pageTitleFull} name="twitter:text:title" />
+    <meta content={pageTitleFull} name="twitter:text:title" /> */}
     <meta content={canonical} property="og:url" />
-    <meta content={canonical} name="twitter:url" />
+    {/* <meta content={canonical} name="twitter:url" /> */}
     <link rel="canonical" href={canonical} />
 
     <meta content={imageUrl || `${siteUrl}/social.png`} property="og:image" />
@@ -179,6 +179,11 @@ Head.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
+// social {
+//   twitter
+//   fbAppId
+// }
+
 const HeadWithQuery = props => (
   <StaticQuery
     query={graphql`
@@ -190,10 +195,6 @@ const HeadWithQuery = props => (
             siteDescription
             siteUrl
             themeColor
-            social {
-              twitter
-              fbAppId
-            }
           }
         }
       }
